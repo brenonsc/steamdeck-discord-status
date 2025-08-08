@@ -132,7 +132,6 @@ class Plugin:
                 "args": {
                     "pid": os.getpid(),
                     "activity": {
-                        "state": "on Steam Deck",
                         "assets": {
                             "large_image": activity["imageUrl"],
                             "small_image": "https://cdn.discordapp.com/app-assets/1055680235682672682/1056080943783354388.png"
@@ -150,7 +149,7 @@ class Plugin:
             if "discordId" in activity:
                 discord_id = activity["discordId"]
             else:
-                data["args"]["activity"]["details"] = "Playing {}".format(activity["details"]["name"])
+                data["args"]["activity"]["details"] = "Jogando {}".format(activity["details"]["name"])
 
             decky_plugin.logger.info("Updating activity: %s (%s)", activity["details"]["name"], discord_id)
             self.pipe = Pipe(discord_id)
